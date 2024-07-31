@@ -1,0 +1,3 @@
+/.vscode/
+vitest.config.ts
+node_modules/

@@ -1,0 +1,17 @@
+{
+  "name": "czds-api-client",
+  "description": "A client library to access the CSDS API",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run tests"
+  },
+  "author": "Kamil Janowski <kgjanowski@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4"
+  }
+}

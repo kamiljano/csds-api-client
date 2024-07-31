@@ -1,13 +1,7 @@
 import { describe, test, expect, beforeAll } from 'vitest';
 import CzdsClient from '../src/index';
-
-const getMandatoryEnvVar = (name: string): string => {
-  const value = process.env[name];
-  if (!value) {
-    throw new Error(`Missing mandatory environment variable: ${name}`);
-  }
-  return value;
-};
+import getMandatoryEnvVar from './get-mandatory-env-var';
+import { CzdsClientError } from '../src/czds-client-error';
 
 const username = getMandatoryEnvVar('ICANN_USERNAME');
 const password = getMandatoryEnvVar('ICANN_PASSWORD');
@@ -49,7 +43,7 @@ describe('CzdsClient', () => {
 
     test('failure', async () => {
       await expect(client.getZone('invalid-zone').getText()).rejects.toThrow(
-        /^Failed to fetch/,
+        CzdsClientError,
       );
     });
   });
